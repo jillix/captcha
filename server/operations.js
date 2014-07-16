@@ -18,7 +18,7 @@ M.emit("captcha.getConfig", function (c) {
 // Verify captcha
 M.on("captcha.verify", function (link, answer, callback) {
     var sid = link.session && link.session._sid;
-    callback(answer === sessions[sid]);
+    callback(answer.toString() === sessions[sid].toString());
 });
 
 /**
@@ -36,9 +36,8 @@ exports.captcha = function (link) {
 
     // Generate number and store it in sessions cache
     var number = parseInt(Math.random() * 9000 + 1000);
-    if (!link.session || !link.session._sid) {
-        sessions[link.session._sid] = number;
-    }
+    var sid = link.session && link.session._sid;
+    sessions[sid] = number;
 
     var cap = new CaptchaPng(serverConfig.width, serverConfig.height, number);
     cap.color(0, 100, 0, 0);
