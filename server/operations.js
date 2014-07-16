@@ -41,6 +41,9 @@ exports.captcha = function (link) {
     }
 
     var cap = new CaptchaPng(serverConfig.width, serverConfig.height, number);
+    cap.color(0, 100, 0, 0);
+    cap.color(80, 80, 80, 255);
+
     var img = cap.getBase64();
     var imgBase64 = new Buffer(img, "base64");
     res.writeHead(200, {
