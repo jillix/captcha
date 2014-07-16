@@ -1,0 +1,13 @@
+{
+    "source": "github",
+    "owner": "jillix",
+    "name": "captcha",
+    "dependencies": [
+        "/client/main.js",
+        "github/jillix/bind/v0.2.2",
+        "github/jillix/events/v0.1.11"
+    ],
+    "operations": [
+        { "file": "server/operations.js", "function": "captcha" }
+    ]
+}
