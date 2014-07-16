@@ -23,7 +23,7 @@ module.exports = function(config) {
      * @return {Object} Module instance
      */
     self.load = function (selector) {
-        $(selector).attr("src", "/@/" + self.miid + "/loadCaptcha/");
+        $(selector).attr("src", "/@/" + self.miid + "/captcha/");
     };
 
     // emit ready
