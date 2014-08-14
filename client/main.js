@@ -5,12 +5,12 @@ var Events = require("github/jillix/events");
 module.exports = function(config) {
 
     var self = this;
-    Events.call (self, config);
+    Events.call(self, config);
 
     // Bind calls
     config.binds = config.binds || [];
     for (var i = 0; i < config.binds.length; ++i) {
-        Bind.call (self, config.binds[i]);
+        Bind.call(self, config.binds[i]);
     }
 
     /**
@@ -22,7 +22,7 @@ module.exports = function(config) {
      * @param {String} selector The selector where the image is loaded
      * @return {Object} Module instance
      */
-    self.load = function (selector) {
+    self.load = function(selector) {
         $(selector).attr("src", "/@/" + self.miid + "/captcha/");
     };
 

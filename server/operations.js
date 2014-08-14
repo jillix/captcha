@@ -11,12 +11,12 @@ var serverConfig = {
 };
 
 // Get configuration
-M.emit("captcha.getConfig", function (c) {
+M.emit("captcha.getConfig", function(c) {
     serverConfig = c;
 });
 
 // Verify captcha
-M.on("captcha.verify", function (link, answer, callback) {
+M.on("captcha.verify", function(link, answer, callback) {
     var sid = link.session && link.session._sid;
     callback(answer.toString() === sessions[sid].toString());
 });
@@ -30,7 +30,7 @@ M.on("captcha.verify", function (link, answer, callback) {
  * @param {Object} link Mono link object
  * @return
  */
-exports.captcha = function (link) {
+exports.captcha = function(link) {
 
     var res = link.res;
 
